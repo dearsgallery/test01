@@ -1,8 +1,45 @@
 <html>
+
 <body>
-    <h1>
-        Chi huahua
-    </h1>
-    <input type="text" value="Some text...">
+    <table>
+        <tr>
+            <td>
+                <h2>Name : </h2>
+            </td>
+            <td>
+                <h2><input type="text" id="name" value=""></h2>
+            </td>
+
+            <td>
+                <h2>Sell : </h2>
+            </td>
+            <td>
+                <h2><input type="number" id="sell" value=""></h2>
+            </td>
+            <td>
+                <h2> <button type="button" onclick="URLgen();">Get Value</button></h2>
+            </td>
+            <td>
+                <h2> <button type="button" onclick="copp();">Copy</button></h2>
+            </td>
+        </tr>
+        <tr>
+            <div>
+                <h2 id="url"></h2>
+            </div>
+        </tr>
+    </table>
 </body>
+<script>
+    function URLgen() {
+        var name = document.getElementById("name").value;
+        var sell = document.getElementById("sell").value;
+        document.getElementById("url").innerHTML = "https://url.com/?name=" + name + "&sell=" + sell;
+    }
+
+    function copp(){
+        var url = document.getElementById("url").textContent;
+        navigator.clipboard.writeText(url);
+    }
+</script>
 </html>
